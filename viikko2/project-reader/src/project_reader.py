@@ -20,8 +20,8 @@ class ProjectReader:
         kuvaus = poetry_dict['description']
         lisenssi = poetry_dict['license']
         tekijat = poetry_dict['authors']
-        riippuvuudet = list(poetry_dict['dependencies'].keys())
-        kehitysriippuvuudet = list(poetry_dict['group']['dev']['dependencies'].keys())
+        riippuvuudet = list(poetry_dict['dependencies'])
+        kehitysriippuvuudet = list(poetry_dict['group']['dev']['dependencies'])
 
         # Muodosta Project-olio tietojen perusteella
         return Project(nimi, kuvaus, lisenssi, tekijat, riippuvuudet, kehitysriippuvuudet)

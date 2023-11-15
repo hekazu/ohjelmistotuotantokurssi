@@ -4,6 +4,7 @@ htmlcov/
 log.html
 report.html
 output.xml
+*.png
 
 # Oman koneen paketinhallintaan liittyviä asioita
 .envrc

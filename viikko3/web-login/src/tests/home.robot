@@ -2,7 +2,7 @@
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
-Test Setup  Go To Main Page
+Test Setup  Go To Home Page
 
 *** Test Cases ***
 Click Login Link

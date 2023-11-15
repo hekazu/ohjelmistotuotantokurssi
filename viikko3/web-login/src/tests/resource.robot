@@ -26,7 +26,7 @@ Login Page Should Be Open
 Main Page Should Be Open
     Title Should Be  Ohtu Application main page
 
-Go To Main Page
+Go To Home Page
     Go To  ${HOME_URL}
 
 Go To Login Page

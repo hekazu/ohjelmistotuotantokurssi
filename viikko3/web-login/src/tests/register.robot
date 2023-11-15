@@ -1,5 +1,6 @@
 *** Settings ***
 Resource  resource.robot
+Resource  login_resource.robot
 Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
 Test Setup  Go To Register Page
@@ -42,6 +43,30 @@ Register With Nonmatching Password And Password Confirmation
     Submit Registration
     Registration Should Fail With Message  Passwords should match
 
+Login After Successful Registration
+    Set Username  kaaleppi
+    Set Password  kuomaseni17
+    Confirm Password  kuomaseni17
+    Submit Registration
+    Registration Should Succeed
+    Go To Login Page
+    Set Username  kaaleppi
+    Set Password  kuomaseni17
+    Submit Credentials
+    Login Should Succeed
+
+Login After Failed Registration
+    Set Username  :)
+    Set Password  xkcd/327
+    Confirm Password  xkcd/327
+    Submit Registration
+    Registration Should Fail With Message  Username does not fulfill requirements
+    Go To Login Page
+    Set Username  :)
+    Set Password  xkcd/327
+    Submit Credentials
+    Login Should Fail With Message  Invalid username or password
+
 *** Keywords ***
 Registration Should Succeed
     Welcome Page Should Be Open
@@ -50,14 +75,6 @@ Registration Should Fail With Message
     [Arguments]  ${message}
     Registration Page Should Be Open
     Page Should Contain  ${message}
-
-Set Username
-    [Arguments]  ${username}
-    Input Text  username  ${username}
-
-Set Password
-    [Arguments]  ${password}
-    Input Password  password  ${password}
 
 Confirm Password
     [Arguments]  ${password}

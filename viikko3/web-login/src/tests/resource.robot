@@ -17,7 +17,7 @@ Open And Configure Browser
     Call Method    ${options}    add_argument    --no-sandbox
     # seuraava rivi on kommentoitu toistaiseksi pois
     # Call Method  ${options}  add_argument  --headless
-    Open Browser  browser=chrome  options=${options}
+    Open Browser  browser=firefox  options=${options}
     Set Selenium Speed  ${DELAY}
 
 Login Page Should Be Open

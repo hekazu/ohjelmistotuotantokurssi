@@ -9,3 +9,4 @@ output.xml
 # Oman koneen paketinhallintaan liittyviä asioita
 .envrc
 shell.nix
+.direnv/

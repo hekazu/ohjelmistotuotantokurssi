@@ -2,4 +2,4 @@
 Repository for returning tasks related to the course Ohjelmistotuotanto
 2023 of the University of Helsinki
 
-<https://github.com/hekazu/ohtuvarasto>
+Another related repository: <https://github.com/hekazu/ohtuvarasto>

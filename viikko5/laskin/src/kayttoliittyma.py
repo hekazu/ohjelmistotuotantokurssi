@@ -68,7 +68,10 @@ class Kayttoliittyma:
         komento_olio = self._komennot[komento]
         komento_olio.suorita()
 
-        self._kumoa_painike["state"] = constants.NORMAL
+        if self._sovellus.on_kumottavaa():
+            self._kumoa_painike["state"] = constants.NORMAL
+        else:
+            self._kumoa_painike["state"] = constants.DISABLED
 
         if self._sovellus.arvo() == 0:
             self._nollaus_painike["state"] = constants.DISABLED

@@ -36,15 +36,23 @@ class Kumoa:
         self.logiikka = sovelluslogiikka
 
     def suorita(self):
-        pass
+        self.logiikka.kumoa()
 
 
 class Sovelluslogiikka:
     def __init__(self, arvo=0):
         self._arvo = arvo
+        self._kumousjono = []
 
     def aseta_arvo(self, arvo):
+        self._kumousjono.append(self._arvo)
         self._arvo = arvo
+
+    def kumoa(self):
+        self._arvo = self._kumousjono.pop()
 
     def arvo(self):
         return self._arvo
+
+    def on_kumottavaa(self):
+        return len(self._kumousjono) > 0

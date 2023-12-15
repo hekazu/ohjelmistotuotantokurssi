@@ -1,4 +1,10 @@
 from tuomari import Tuomari
+from enum import Enum
+
+
+class Vaikeusaste(Enum):
+    NORMAALI = 1
+    HAASTAVA = 2
 
 
 class KiviPaperiSakset:
